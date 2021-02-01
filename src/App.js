@@ -1,5 +1,7 @@
 //import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Sub from './Sub';
 
 //0. React엔진 - 데이터변경감지해서 UI 그려주는!!
 //1. 실행과정(index.html) - SPA(페이지가 1)
@@ -24,32 +26,22 @@ const mystyle = {
 };
 
 function App() {
-  // let c;
-  // console.log(1, c);
-
   let list = [1, 2, 3];
-  let number = 1;
+  //let number = 1; //상태변수라면 UI가 자동으로 변경됨, 상태값 아님
+  const [number, setNumber] = useState(2); //React안에 hookes 라이브러리 상태값이 됨.
   const add = () => {
-    number++;
-    console.log('add', add);
+    //number++;
+    setNumber(number + 1); //리액트한테 number 값 변경할께라고 요청
+    console.log('add', number);
   };
 
+  //랜더링 시점 = 상태값 변경
   return (
     <div>
-      <div>
-        {list.map((n) => (
-          <h1>{n}</h1>
-        ))}
-      </div>
+      <h1>숫자:{number}</h1>
+      <button onClick={add}>더하기</button>
+      <Sub />
     </div>
-
-    // <div>
-    //   <div style={mystyle}>
-    //     안녕{a === 10 ? '10입니다.' : '10이 아닙니다.'}{' '}
-    //   </div>
-    //   <h1 className="box-style">해당태그{b === 20 && '20입니다.'}</h1>
-    //   <hr />
-    // </div>
   );
 }
 
