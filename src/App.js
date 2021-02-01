@@ -28,6 +28,11 @@ function App() {
   // console.log(1, c);
 
   let list = [1, 2, 3];
+  let number = 1;
+  const add = () => {
+    number++;
+    console.log('add', add);
+  };
 
   return (
     <div>

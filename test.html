@@ -50,6 +50,30 @@
 
       const b5 = a5.map((n) => n + 10); //const b5 = [...a5]; //값 하나하나를 가공할 수 있음.
       console.log(b5);
+
+      console.log('6.=======================수정하기');
+
+      const a6 = { id: 1, name: '홍길동' };
+      const b6 = { ...a6, name: '임꺽정' };
+      //const c6 = {...a6, ...data};
+
+      const users = [
+        { id: 1, name: '구태모', phone: '1111' },
+        { id: 2, name: '이대엽', phone: '2222' },
+        { id: 3, name: '오승훈', phone: '3333' },
+      ];
+
+      const updateUserDto = {
+        id: 2,
+        name: '홍길동',
+      };
+
+      const newUsers = users.map((u) =>
+        u.id === updateUserDto.id ? { ...u, ...updateUserDto } : u,
+      ); //const newUser = {...users}
+      console.log(newUsers);
+
+      //users[1].name = updateUserDto.name;   //비추천... 사이드이펙트. 불변성이 깨짐
     </script>
   </body>
 </html>
