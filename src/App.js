@@ -26,21 +26,35 @@ const mystyle = {
 };
 
 function App() {
-  let list = [1, 2, 3];
-  //let number = 1; //상태변수라면 UI가 자동으로 변경됨, 상태값 아님
-  const [number, setNumber] = useState(2); //React안에 hookes 라이브러리 상태값이 됨.
-  const add = () => {
-    //number++;
-    setNumber(number + 1); //리액트한테 number 값 변경할께라고 요청
-    console.log('add', number);
+  // 다운로드 받음
+  console.log('?');
+  const [users, setUsers] = useState([
+    //래퍼런스 변경되야 동작!!! 깊은복사가 필요
+    { id: 1, name: '홍길동' },
+    { id: 2, name: '임꺽정' },
+    { id: 3, name: '장보고' },
+    { id: 4, name: '코스' },
+  ]);
+
+  const download = () => {
+    let sample = [
+      { id: 1, name: '홍길동' },
+      { id: 2, name: '임꺽정' },
+      { id: 3, name: '장보고' },
+      { id: 4, name: '코스' },
+    ];
+    setUsers([...sample]);
   };
 
   //랜더링 시점 = 상태값 변경
   return (
     <div>
-      <h1>숫자:{number}</h1>
-      <button onClick={add}>더하기</button>
-      <Sub />
+      <button onClick={download}>다운로드</button>
+      {users.map((u) => (
+        <h1>
+          {u.id}, {u.name}
+        </h1>
+      ))}
     </div>
   );
 }
