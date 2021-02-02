@@ -6,6 +6,7 @@ import Home from '../components/home/Home';
 const HomePage = () => {
   // http 요청 (fetch, axios(다운))
   const [boards, setBoards] = useState([]);
+  const [number, setNumber] = useState(0);
 
   // 빈 배열 한번만 실행
   useEffect(() => {
@@ -18,12 +19,18 @@ const HomePage = () => {
 
     // 빈데이터
     setBoards([...data]);
+    setNumber(1);
   }, []);
 
   return (
     <div>
       <Header />
-      <Home boards={boards} setBoards={setBoards} />
+      <Home
+        boards={boards}
+        setBoards={setBoards}
+        number={number}
+        setNumber={setNumber}
+      />
       <Footer />
     </div>
   );

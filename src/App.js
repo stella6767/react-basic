@@ -1,17 +1,13 @@
-// useRef (html 태그의 id)
+// useRef (디자인)
+// dom을 변경할 때 사용
 
-import styled from 'styled-components';
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <div>
-      <Title>안녕</Title>
+      <HomePage />
     </div>
   );
 }
