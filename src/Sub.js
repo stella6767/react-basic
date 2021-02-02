@@ -2,7 +2,6 @@ import React from 'react';
 
 const Sub = () => {
   //리턴을 할지 안 할지 함수 제공!!
-
   return (
     <div>
       <h1>Sub입니다.</h1>

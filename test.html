@@ -35,21 +35,21 @@
       const b4 = a4.slice(0, 2);
       console.log(`b4의 값은 : ${b4}`); //1, 2 //[1,2]
       const c4 = [...a4.slice(0, 2), 4, ...a4.slice(2, 3)]; //데이터 중간에 삽입
-      console.log(c4); //[[1,2]] => ... 쓰면 원래 배열과 같이 됨
+      console.log(`c4의 값은 ${c4}`); //[[1,2]] => ... 쓰면 원래 배열과 같이 됨
 
       console.log('5.=======================반복하기');
       const a5 = [1, 2, 3];
       //   for (let i = 0; i < a5.length; i++) { //JSX 문법에는 못 씀
       //     console.log(a5[i]);
       //   }
-      //   a5.forEach((n) => { //리턴못함
-      //     {
+      //   a5.forEach((n) => { //for each문 return 을 할 수 없다. (리턴이 void)
+      //     { //forEach() 메서드는 주어진 함수를 배열 요소 각각에 대해 실행합니다. 반환값이 없다..
       //       console.log(n);
       //     }
       //   });
 
       const b5 = a5.map((n) => n + 10); //const b5 = [...a5]; //값 하나하나를 가공할 수 있음.
-      console.log(b5);
+      console.log(`b5의 값은 ${b5}`);
 
       console.log('6.=======================수정하기');
 
