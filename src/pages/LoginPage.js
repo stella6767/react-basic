@@ -1,14 +1,15 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Login from '../components/login/Login';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
+  console.log('LoginPage', props);
+  console.log(props.match.params.id);
+  props.history.goback();
+
+  //const history = {}
   return (
     <div>
-      <Header />
       <Login />
-      <Footer />
     </div>
   );
 };
