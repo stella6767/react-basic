@@ -1,15 +1,22 @@
 import React from 'react';
+import styled from 'styled-components';
 
 // Function 방식
 // class 방식
 const Home = (props) => {
   // 구조분할 할당
-  const { boards, setBoards, number, setNumber } = props;
+  const { boards, setBoards, number, setNumber, user } = props;
+
+  const StyledCheckButton = styled.button`
+    color: ${(props) => (user.username === 'ssar' ? 'blue' : 'red')};
+  `; //이거는 어쩔 수 없이 내부에 선언 props를 쓰기 위해서, 디자인 동적결정
 
   return (
     <div>
       <h1>홈 : {number}</h1>
-      <button onClick={() => setNumber(number + 1)}>번호증가</button>
+      <StyledCheckButton onClick={() => setNumber(number + 1)}>
+        번호증가
+      </StyledCheckButton>
       <button onClick={() => setBoards([])}>전체삭제</button>
       {boards.map((board) => (
         <h3>
