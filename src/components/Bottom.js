@@ -1,14 +1,18 @@
 import React from 'react';
-import Bottom1 from './Bottom1';
-import { StyledBoxDiv } from './StyledComponent';
+import { useDispatch } from 'react-redux';
+import '../App.css';
+import { decrease, increase } from '../store';
 
-const Bottom = (props) => {
-  const { add, minus } = props;
+const Bottom = () => {
+  const dispathcer = useDispatch();
 
+  //인자 넘겨주기
   return (
-    <StyledBoxDiv>
-      <Bottom1 add={add} minus={minus} />
-    </StyledBoxDiv>
+    <div className="sub_container">
+      <h1>Bottom</h1>
+      <button onClick={() => dispathcer(increase('cos'))}>증가</button>
+      <button onClick={() => dispathcer(decrease())}>감소</button>
+    </div>
   );
 };
 

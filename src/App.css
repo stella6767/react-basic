@@ -1,8 +1,12 @@
-.box-style {
-  color: blue;
-  background-color: blue;
+.container {
+  height: 700;
+  border: 2px solid black;
+}
+.sub_container {
+  height: 250;
+  border: 2px solid black;
 }
 
-.menu {
-  display: flex;
+div {
+  padding: 10px;
 }

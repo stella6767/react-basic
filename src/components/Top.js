@@ -1,14 +1,19 @@
 import React from 'react';
-import { StyledBoxDiv } from './StyledComponent';
-import Top1 from './Top1';
+import { useSelector } from 'react-redux';
+import '../App.css';
 
-const Top = (props) => {
-  const { number } = props;
+const Top = () => {
+  //const number= useSelector((store) => store.number); //구독 1단계
 
+  //구조분할
+  const { number, username } = useSelector((store) => store);
   return (
-    <StyledBoxDiv>
-      <Top1 number={number} />
-    </StyledBoxDiv>
+    <div className="sub_container">
+      <h1>Top</h1>
+      {/* 구독2단계 완료 */}
+      번호: {number}
+      이름: {username}
+    </div>
   );
 };
 
